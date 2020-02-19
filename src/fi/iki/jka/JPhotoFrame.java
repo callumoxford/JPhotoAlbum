@@ -581,8 +581,10 @@ public class JPhotoFrame extends JFrame
             showExif();
         }
         else if (cmd.equals(JPhotoMenu.A_SLIDESHOW)) {
-            startSlideshow();
-
+            startSlideshow(5000);
+        }
+        else if (cmd.equals(JPhotoMenu.A_SLIDESHOW_QUICK)) {
+            startSlideshow(2000);
         }
         else if (cmd.equals(JPhotoMenu.A_HELP)) {
             displayHelp();
@@ -621,9 +623,9 @@ public class JPhotoFrame extends JFrame
         setTitle();
     }
 
-    private void startSlideshow() {
+    private void startSlideshow(int interval) {
         wasCalled = true;
-        visualiseSlideShow(5000);
+        visualiseSlideShow(interval);
     }
 
     void visualiseSlideShow(int interval) {
